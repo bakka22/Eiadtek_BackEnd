@@ -16,6 +16,8 @@ class Clinic(BaseModel):
     whatsapp_number: Optional[str] = None
     email: Optional[str] = None
     location_link: Optional[str] = None
+    working_time: Optional[str] = None
+    additional_info: Optional[str] = None
 
 class ClinicCreate(BaseModel):
     type: str
@@ -28,3 +30,5 @@ class ClinicCreate(BaseModel):
     whatsapp_number: Optional[str] = None
     email: Optional[str] = None
     location_link: Optional[str] = None
+    working_time: Optional[str] = None
+    additional_info: Optional[str] = None
