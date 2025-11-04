@@ -62,9 +62,7 @@ class ClinicService:
         return Clinic(**clinic)
 
     async def get_clinic_picture(self, picture_filename: str):
-        print("inside clinic service")
         picture_path = os.path.join(UPLOADS_DIR, f"{picture_filename}")
-        print(f"picture_path: {picture_path}")
         if not os.path.exists(picture_path):
             raise HTTPException(status_code=404, detail="Picture not found")
 

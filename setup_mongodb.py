@@ -13,7 +13,6 @@ users_collection = db["users"]
 # Create indexes
 clinics_collection.create_index([("state", pymongo.ASCENDING), ("city", pymongo.ASCENDING)])
 users_collection.create_index("username", unique=True)
-print("Indexes created successfully.")
 
 # Insert sample clinic
 sample_clinic = {
@@ -28,7 +27,6 @@ sample_clinic = {
     "location_link": "https://maps.google.com/?q=15.5881,32.5666"
 }
 clinics_collection.insert_one(sample_clinic)
-print("Sample clinic inserted.")
 
 # Insert sample users
 sample_owner = {
@@ -42,4 +40,3 @@ sample_customer = {
     "role": "customer"
 }
 users_collection.insert_many([sample_owner, sample_customer])
-print("Sample users inserted: owner/ownerpass (owner), customer/customerpass (customer)")

@@ -51,7 +51,7 @@ async def get_clinic_picture(picture_filename: str):
     Example: GET /clinics/picture/1234abcd_myclinic.png
     """
     decoded_filename = unquote(picture_filename)
-    print(decoded_filename, flush=True)
+
     return await clinic_service.get_clinic_picture(decoded_filename)
 
 @router.put("/{id}", response_model=Clinic)
