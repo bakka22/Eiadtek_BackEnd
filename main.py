@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes.clinic_routes import router as clinic_router
 from routes.auth_routes import router as auth_router  # New import
 from routes.states_routes import router as state_router
+from routes.contact_info_routes import router as contact_info_router
+from routes.recommendation_routes import router as recommendation_router
 import logging
 import time
 
@@ -56,6 +58,8 @@ app.add_middleware(
 app.include_router(auth_router, prefix="/auth", tags=["auth"])  # New
 app.include_router(clinic_router, prefix="/clinics", tags=["clinics"])
 app.include_router(state_router, prefix="/states", tags=["States"])
+app.include_router(recommendation_router, prefix="/recommendation", tags=["recommendation"])
+app.include_router(contact_info_router, prefix="/contact_info", tags=["contact_info"])
 
 
 @app.get("/")

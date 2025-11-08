@@ -7,6 +7,8 @@ class Database:
         self.clinics = self.db["clinics"]
         self.users = self.db["users"]  # New: Users collection
         self.states = self.db['states_cities']
+        self.recommendations = self.db['recommendations']
+        self.contact_infos = self.db['contact_infos']
         
 
     def get_clinics_collection(self):
@@ -17,6 +19,12 @@ class Database:
     
     def get_states_collection(self):
         return self.states
+    
+    def get_recommendations_collection(self):
+        return self.recommendations
+    
+    def get_contact_infos_collection(self):
+        return self.contact_infos
 
 # Singleton instance
 db = Database()
